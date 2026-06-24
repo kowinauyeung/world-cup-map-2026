@@ -4,10 +4,10 @@
 
 | Layer | Tool | Required coverage |
 | --- | --- | --- |
-| Pure domain | Vitest | parsing, validation, UTC conversion, offset formatting, Day/Night classification, date/venue selectors |
+| Pure domain | Vitest | parsing, validation, UTC conversion, offset formatting, solar Day/Night classification, date/venue selectors |
 | Components | Vitest + React Testing Library + `user-event` | calendar filtering, list/detail selection, TBC states, accessible names, empty states |
-| Map boundary | mocked `VenueMap` or mocked Leaflet adapter | marker-group inputs and select callbacks; no real tile request in unit tests |
-| Manual browser check | Vite dev server | actual tiles, Leaflet icon assets, viewport layout, keyboard traversal |
+| Map boundary | mocked `VenueMap` or mocked MapLibre adapter | marker-group inputs and select callbacks; no real map-provider request in unit tests |
+| Manual browser check | Vite dev server | branded vector style, tiles, glyphs, custom markers, attribution, WebGL, viewport layout, keyboard traversal |
 
 ## Required automated cases
 
@@ -15,6 +15,7 @@
 - Select `2026-06-11` and assert only match IDs 1 and 2 are passed to list/map selectors.
 - Select match 1 and assert its known time, `UTC-06:00 (GMT-6)`, `2026-06-11 23:00 UTC`, and `Day` are rendered.
 - Select match 45 and assert TBC time/day-night behaviour; assert calculated UTC and browser-local time are absent.
+- Assert solar classification with deterministic fixtures: Mexico City (`19.3029`, `-99.1504`) at `2026-06-11T18:00:00Z` is `Day`, and at `2026-06-12T06:00:00Z` is `Night`.
 - Assert a `result: null` match has no score output.
 - Assert a date with zero matches has the required empty state and zero map marker inputs.
 - Assert clearing the date clears the selected match and restores all venue groups.
@@ -27,7 +28,7 @@ Freeze or mock `Intl.DateTimeFormat` in tests that assert formatted browser-loca
 
 - Check desktop and 375px-wide layouts: no horizontal page scrolling and all content remains usable.
 - Navigate date selection, match selection, and marker-associated controls by keyboard only.
-- Inspect the real map at initial load and after date/match selection: tiles load, attribution is visible, markers are positioned, and selected-match focus works.
+- Inspect the real map at initial load and after date/match selection: the branded style, tiles, glyphs, and custom markers load; attribution is visible; markers are positioned; and selected-match focus works.
 - Verify a marker representing multiple matches offers a choice limited to the active date.
 - Verify that a no-time match never displays a fabricated UTC/local time or Day/Night label.
 

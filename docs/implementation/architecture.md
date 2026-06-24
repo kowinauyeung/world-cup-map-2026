@@ -5,11 +5,13 @@ This is the implementation contract for Claude Code. Follow the product requirem
 ## Dependencies to add
 
 ```bash
-yarn add leaflet react-leaflet react-day-picker
-yarn add --dev @types/leaflet vitest jsdom @testing-library/react @testing-library/user-event
+yarn add maplibre-gl suncalc@^2.0.0
+yarn add --dev vitest jsdom @testing-library/react @testing-library/user-event
 ```
 
-Add the smallest compatible Vitest configuration for this Vite project and a `test` script. Do not add a state-management library, date-time library, backend client, or CSS framework for this scope.
+Add the smallest compatible Vitest configuration for this Vite project and a `test` script. Do not add a state-management library, date-time library, backend client, or map-renderer wrapper without a technical decision. The calendar and general UI styling systems are deliberately not prescribed: Claude may choose them during UI design while preserving the requirements.
+
+Create a tracked `.env.example` containing an empty `VITE_MAP_STYLE_URL=` value. Store the real MapTiler style URL only in `.env.local` and deployment environment configuration. It is a public browser credential, not a secret: restrict its MapTiler token to approved origins and never grant administration privileges.
 
 ## Proposed module boundaries
 
@@ -17,7 +19,7 @@ Add the smallest compatible Vitest configuration for this Vite project and a `te
 src/
   domain/
     tournament.ts          # Raw and normalised types
-    normalizeTournament.ts # parsing, validation, UTC and Day/Night helpers
+    normalizeTournament.ts # parsing, validation, UTC and solar Day/Night helpers
     selectors.ts           # date counts, filters, venue grouping
   data/
     tournament.ts          # imports data.json and exports normalised matches
@@ -29,18 +31,18 @@ src/
       MatchDetails.tsx
     map/
       VenueMap.tsx
-      MapController.tsx
+      mapConfig.ts          # reads and validates VITE_MAP_STYLE_URL
   App.tsx                  # selectedDate and selectedMatchId only
   App.css
 ```
 
 Exact filenames may differ, but preserve these boundaries:
 
-- **Domain** is pure TypeScript and must not import React or Leaflet.
+- **Domain** is pure TypeScript and must not import React or MapLibre.
 - **Data** imports, validates, and normalises the static JSON once.
 - **Feature components** receive typed props and emit intent through callbacks; they do not access raw JSON.
 - **`App`** is the sole owner of selection state and derives all filtered values.
-- **`VenueMap`** receives already-grouped markers and is the only Leaflet-aware feature boundary.
+- **`VenueMap`** receives already-grouped markers and is the only MapLibre-aware feature boundary. It owns the map instance, teardown, and selected-venue `flyTo` effect.
 
 ## State and event flow
 
@@ -70,7 +72,7 @@ Required transitions:
 - One venue marker may represent multiple matches. Its popup/list must show only matches in the current filtered collection.
 - Render result only if `result !== null`.
 - Use an accessible HTML match list and details panel; do not make the map the sole interaction path.
-- Import Leaflet CSS once, and confirm default marker assets render in the production build.
+- Import MapLibre CSS once. Use a UI-design-defined venue representation rather than provider default pins, and verify the branded style, icons, glyphs, attribution, and an equivalent keyboard-accessible selection path in the production build.
 
 ## Time helper contract
 
@@ -78,17 +80,19 @@ Expose pure helpers with behaviour equivalent to:
 
 ```ts
 getUtcInstant(match: Match): Date | null
-getDayNight(localTime: string | null): 'day' | 'night' | 'tbc'
+getDayNight(match: Match): 'day' | 'night' | 'tbc'
 formatUtcOffset(hours: number, original: string): string
 ```
 
 `getUtcInstant` must return `null` for `localTime: null`. Do not construct a local-time `Date` from a bare `YYYY-MM-DDTHH:mm` string; browser parsing would apply the visitor's zone and corrupt the schedule conversion.
 
+`getDayNight` shall return `tbc` when `getUtcInstant` returns `null`. Otherwise it shall call `SunCalc.getPosition(utcInstant, latitude, longitude)` and return `day` when `altitude >= 0`, or `night` when it is below zero. The calculation is based on the apparent horizon; do not substitute a local clock-time range or make a network request.
+
 ## Styling and responsive layout
 
-- Use the existing CSS approach; avoid introducing Tailwind for this project.
-- Keep the map in a fixed, responsive-height container so Leaflet has a non-zero layout size.
-- Use a two-column desktop layout for controls/details and map, with a single-column layout below 768px.
+- The UI styling approach and layout are intentionally left to the design implementation.
+- Keep the map in a fixed, responsive-height container so MapLibre has a non-zero layout size.
+- Ensure narrow viewports have no horizontal page scrolling and retain access to every required interaction.
 - Do not rely on colour alone for selected state or Day/Night distinction.
 - Preserve useful focus outlines and ensure text contrast meets WCAG AA for normal text.
 
@@ -98,5 +102,5 @@ formatUtcOffset(hours: number, original: string): string
 2. Add domain types, JSON loader/validation, and pure unit tests.
 3. Add calendar and filtered match list with component tests.
 4. Add details panel and time/day-night formatting tests.
-5. Add Leaflet map, marker grouping, and map-controller behaviour.
+5. Add MapLibre map, branded style configuration, custom marker grouping, and selected-venue `flyTo` behaviour.
 6. Complete accessibility/responsive checks and run all quality gates.

@@ -29,8 +29,8 @@ Out of scope:
 - **Selected match**: one match identified by its `match_id`, or no match.
 - **Known kick-off**: a match whose `time` is not `null`.
 - **Venue marker**: one marker per venue coordinate. A marker can represent more than one match on a selected date.
-- **Day**: a known local kick-off from `06:00` inclusive to `18:00` exclusive.
-- **Night**: a known local kick-off from `18:00` inclusive to `06:00` exclusive.
+- **Day**: a known kick-off whose calculated solar altitude at the venue coordinates is at or above the apparent horizon (`>= 0`).
+- **Night**: a known kick-off whose calculated solar altitude at the venue coordinates is below the apparent horizon (`< 0`).
 - **TBC**: information not supplied by the source data. It must never be fabricated.
 
 ## Functional requirements (EARS)
@@ -57,8 +57,8 @@ Out of scope:
 
 - **FR-13 — Event-driven:** When a selected match has a known kick-off, the system shall show the local schedule date and time, the source offset as `UTC±HH:00 (GMT±H)`, and the corresponding UTC date and time.
 - **FR-14 — Event-driven:** When a selected match has a known kick-off, the system shall also show the equivalent time in the visitor's browser time zone using `Intl.DateTimeFormat`.
-- **FR-15 — Event-driven:** When a selected match has a known kick-off from `06:00` inclusive to `18:00` exclusive, the system shall label it **Day**.
-- **FR-16 — Event-driven:** When a selected match has a known kick-off outside the FR-15 interval, the system shall label it **Night**.
+- **FR-15 — Event-driven:** When a selected match has a known kick-off, the system shall calculate the solar altitude at the match UTC instant and venue coordinates. When the altitude is at or above the apparent horizon, the system shall label it **Day**.
+- **FR-16 — Event-driven:** When the solar altitude calculated under FR-15 is below the apparent horizon, the system shall label the match **Night**.
 - **FR-17 — Unwanted behaviour:** If a match `time` is `null`, the system shall display `Kick-off time: TBC`, retain the supplied venue UTC offset, show `Day/Night: TBC`, and shall not calculate or display a UTC or browser-local timestamp.
 - **FR-18 — Ubiquitous:** The map marker popup or accessible label shall expose the venue name and its source UTC offset. It shall expose a Day/Night label only for a specifically selected match with a known kick-off.
 
@@ -67,7 +67,7 @@ Out of scope:
 - **FR-19 — Ubiquitous:** All functionality available with a pointer shall be available with a keyboard.
 - **FR-20 — Ubiquitous:** Every interactive control shall have an accessible name; map markers shall have a name containing the venue and match count for the active filter.
 - **FR-21 — Event-driven:** When a selection changes the details panel, the system shall announce the selected match name through a polite live region or move focus to a clearly labelled details heading without unexpected focus trapping.
-- **FR-22 — State-driven:** While the viewport is narrower than 768 CSS pixels, the system shall present calendar, list/details, and map in a single-column order without horizontal page scrolling.
+- **FR-22 — State-driven:** While the viewport is narrower than 768 CSS pixels, the system shall provide access to calendar, match selection, match details, and map without horizontal page scrolling. Their visual arrangement is a UI-design decision.
 
 ## Acceptance scenarios
 
@@ -85,7 +85,7 @@ Out of scope:
 ## Non-functional requirements
 
 - **NFR-01:** TypeScript shall remain in strict mode; no production code may introduce `any`.
-- **NFR-02:** The application shall have no runtime backend dependency. Map tiles are the only permitted runtime network request.
+- **NFR-02:** The application shall have no runtime backend dependency. Requests for the configured vector-map style, map tiles, glyphs, sprites, and required map-provider telemetry are the only permitted runtime network requests.
 - **NFR-03:** `yarn lint` and `yarn build` shall pass before merge.
 - **NFR-04:** Automated tests shall cover all acceptance scenarios that do not require a real map-tile network request.
-- **NFR-05:** The map implementation shall provide required OpenStreetMap attribution.
+- **NFR-05:** The map implementation shall provide all required MapTiler and map-data attribution.
