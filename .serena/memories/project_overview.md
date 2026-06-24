@@ -1,7 +1,7 @@
 # Project Overview: World Cup Map 2026
 
 ## Purpose
-An interactive, static client-side web app to explore the **FIFA World Cup 2026** schedule by date and venue. A visitor picks a calendar date, sees relevant venues on a map, selects a match, and views its local / UTC / browser-local time plus a Day/Night indicator. It is a **schedule explorer, not a live-score service**.
+An interactive, static client-side web app to explore the **FIFA World Cup 2026** schedule by date and venue. A visitor can browse all 16 venues geographically, inspect a venue's matches, browse the complete 104-match schedule, filter by calendar date, and view local / UTC / browser-local time plus a Day/Night indicator. It is a **schedule explorer, not a live-score service**.
 
 ## Source of truth
 - `data.json` (repo root) is the **authoritative** schedule dataset. The app must NOT call any external schedule API or enrich missing fields.
@@ -13,8 +13,9 @@ An interactive, static client-side web app to explore the **FIFA World Cup 2026*
 - Recent commits: "docs: define project requirements and architecture", "initial commit".
 
 ## Key docs (read before implementing)
-- `docs/requirements/001-product-requirements.md` — EARS functional requirements (FR-01..FR-22), acceptance scenarios (AT-01..AT-08), NFRs.
+- `docs/requirements/001-product-requirements.md` — EARS functional requirements (FR-01..FR-25), acceptance scenarios (AT-01..AT-11), NFRs.
 - `docs/requirements/002-data-contract.md` — raw schema, normalised `Match` model, validity rules, time-conversion formula.
+- `docs/requirements/003-user-stories.md` — user outcomes and traceability for venue/map/calendar/schedule exploration.
 - `docs/decisions/ADR-001..003` — static SPA, MapLibre GL JS + branded MapTiler vector-map style, schedule time semantics (GMT facts + solar Day/Night + TBC).
 - `docs/implementation/architecture.md` — module boundaries, state/event flow, delivery sequence.
 - `docs/implementation/testing-strategy.md` — test layers, required cases, completion gate.

@@ -25,7 +25,7 @@ src/
 selectedDate: string | null
 selectedMatchId: number | null
 ```
-Required transitions: calendar select → set date, clear matchId; calendar clear → both null; match select → keep date, set id; single-match marker → select it; multi-match marker → show chooser, don't auto-select; if filter drops selected id → clear it.
+Required transitions: calendar select → set date, clear matchId; calendar clear → both null; match select → keep date, set id; single-match venue representation → select it; multi-match venue representation → show chooser, don't auto-select; if filter drops selected id → clear it.
 
 ## Time semantics (ADR-003 / data-contract) — CRITICAL
 - Supplied `gmt_offset` is a fixed schedule fact; never infer IANA zone from coordinates.

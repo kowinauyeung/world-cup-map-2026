@@ -42,16 +42,16 @@ Exact filenames may differ, but preserve these boundaries:
 - **Data** imports, validates, and normalises the static JSON once.
 - **Feature components** receive typed props and emit intent through callbacks; they do not access raw JSON.
 - **`App`** is the sole owner of selection state and derives all filtered values.
-- **`VenueMap`** receives already-grouped markers and is the only MapLibre-aware feature boundary. It owns the map instance, teardown, and selected-venue `flyTo` effect.
+- **`VenueMap`** receives already-grouped venue representations and is the only MapLibre-aware feature boundary. It owns the map instance, teardown, and selected-venue `flyTo` effect.
 
 ## State and event flow
 
 ```text
 calendar select/clear ─┐
 match list select ─────┼─> App: selectedDate + selectedMatchId
-map marker activate ───┘              │
+map venue activate ────┘              │
                                       ├─> derived matches by date
-                                      ├─> derived venue marker groups
+                                      ├─> derived venue groups
                                       └─> selected MatchDetails + map focus
 ```
 
@@ -60,16 +60,16 @@ Required transitions:
 1. On calendar select: set `selectedDate`; set `selectedMatchId` to `null`.
 2. On calendar clear: set both values to `null`.
 3. On match selection: keep the current date and set that match ID.
-4. On a single-match marker: select that match.
-5. On a multi-match marker: expose an in-context list; set an ID only after the user chooses one.
+4. On a single-match venue representation: select that match.
+5. On a multi-match venue representation: expose an in-context list; set an ID only after the user chooses one.
 6. If filtering means the selected ID is no longer present, clear it.
 
 ## Rendering rules
 
 - Calendar days outside the dataset's range must not be selectable.
-- With no selected date, map all venue groups from all matches; list may be a concise prompt rather than a 104-row list.
-- With a selected date, render only that day's matches and their venue groups.
-- One venue marker may represent multiple matches. Its popup/list must show only matches in the current filtered collection.
+- With no selected date, map all venue groups from all matches and make all 104 matches discoverable in a complete, map-independent schedule view. UI design may choose its visual arrangement, but it must not omit records.
+- With a selected date, render only that day's matches and venue groups, and show each out-of-map match entry's name, local time or `TBC`, source UTC offset, and venue.
+- One venue representation may represent multiple matches. Its context/list must show only matches in the current filtered collection.
 - Render result only if `result !== null`.
 - Use an accessible HTML match list and details panel; do not make the map the sole interaction path.
 - Import MapLibre CSS once. Use a UI-design-defined venue representation rather than provider default pins, and verify the branded style, icons, glyphs, attribution, and an equivalent keyboard-accessible selection path in the production build.
@@ -102,5 +102,5 @@ formatUtcOffset(hours: number, original: string): string
 2. Add domain types, JSON loader/validation, and pure unit tests.
 3. Add calendar and filtered match list with component tests.
 4. Add details panel and time/day-night formatting tests.
-5. Add MapLibre map, branded style configuration, custom marker grouping, and selected-venue `flyTo` behaviour.
+5. Add MapLibre map, branded style configuration, venue grouping, and selected-venue `flyTo` behaviour.
 6. Complete accessibility/responsive checks and run all quality gates.
