@@ -2,7 +2,7 @@
 
 | Area | Purpose |
 | --- | --- |
-| [`requirements/`](./requirements/) | Testable product behaviour, user stories, and the source-data contract. |
+| [`requirements/`](./requirements/) | Testable product behaviour, user stories, source-data contracts, localization, and venue-profile content. |
 | [`decisions/`](./decisions/) | Architecture Decision Records (ADRs) that constrain the implementation. |
 | [`implementation/`](./implementation/) | Component boundaries, delivery order, and test strategy for implementation. |
 

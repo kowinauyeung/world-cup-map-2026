@@ -4,8 +4,8 @@
 
 | Layer | Tool | Required coverage |
 | --- | --- | --- |
-| Pure domain | Vitest | parsing, validation, UTC conversion, offset formatting, solar Day/Night classification, date/venue selectors |
-| Components | Vitest + React Testing Library + `user-event` | calendar filtering, list/detail selection, TBC states, accessible names, empty states |
+| Pure domain | Vitest | parsing, schedule/profile validation, locale resolution, UTC conversion, offset formatting, solar Day/Night classification, date/venue selectors |
+| Components | Vitest + React Testing Library + `user-event` | calendar filtering, list/detail selection, locale/profile rendering, TBC states, accessible names, empty states |
 | Map boundary | mocked `VenueMap` or mocked MapLibre adapter | venue-group inputs and select callbacks; no real map-provider request in unit tests |
 | Manual browser check | Vite dev server | branded vector style, tiles, glyphs, venue representations, attribution, WebGL, viewport layout, keyboard traversal |
 
@@ -26,6 +26,9 @@
 - Assert clearing the date clears the selected match and restores all venue groups.
 - Assert a multi-match venue representation invokes a chooser/list rather than selecting a match immediately.
 - Assert all interactive calendar, list, and venue-proxy controls have accessible names.
+- Assert browser-locale resolution for `ja-JP`, `ko`, `es-MX`, `zh-HK`, unsupported `de-DE`, and `zh-CN` fallback cases.
+- Assert every static UI message catalogue and all 16 venue profiles contain every supported locale; reject missing profile/source/locale data.
+- Assert a selected venue renders localized details, background, history, and factual source links while preserving the source match/venue strings.
 
 Freeze or mock `Intl.DateTimeFormat` in tests that assert formatted browser-local time, so tests do not depend on the CI machine's locale or time zone.
 
@@ -36,6 +39,7 @@ Freeze or mock `Intl.DateTimeFormat` in tests that assert formatted browser-loca
 - Inspect the real map at initial load and after date/match selection: the branded style, tiles, glyphs, and venue representations load; attribution is visible; venue coordinates are positioned; and selected-match focus works.
 - Verify a venue representation representing multiple matches offers a choice limited to the active date.
 - Verify that a no-time match never displays a fabricated UTC/local time or Day/Night label.
+- At 320px, 768px, and 1440px viewport widths, complete calendar/schedule, venue, match, map, and localized-content interactions; confirm no horizontal page overflow or hover-only required action.
 
 ## Completion gate
 

@@ -85,6 +85,37 @@ Acceptance notes:
 - If the source time is `null`, it displays `Kick-off time: TBC` instead of a start time or `Not started` status.
 - If a known kick-off is past and no result exists, it displays `Result pending`; it does not infer `Finished` or `Not started`.
 
+## US-09 — Read the app in a supported browser language
+
+**As a visitor, I want the app to use a language I know from my browser settings, so that I can understand its interface without configuring the app manually.**
+
+Acceptance notes:
+
+- The only supported application locales are English (`en`, default), Japanese (`ja`), Korean (`ko`), Spanish (`es`), and Traditional Chinese (`zh-Hant`).
+- The app uses the first supported preference in `navigator.languages`; if none matches, it uses English.
+- Static UI labels, status labels, venue profile content, and formatted dates/times use the resolved locale. Source match/team strings remain the values in `data.json`.
+- Simplified Chinese and unsupported browser locales do not silently receive a different language; they fall back to English.
+
+## US-10 — Learn about a selected stadium
+
+**As a visitor, I want to see a selected stadium's details, background, and history, so that I understand the place hosting its matches.**
+
+Acceptance notes:
+
+- Selecting a venue shows its name, geographic location, background, and history in the resolved app locale.
+- The details are sourced from a curated static venue-profile dataset, not invented from map coordinates or generated at render time.
+- Every venue in the schedule has a complete profile and source links for factual content.
+
+## US-11 — Use the app on mobile and desktop
+
+**As a visitor, I want the app to work on a mobile device and desktop browser, so that I can use every schedule and map feature without broken UI.**
+
+Acceptance notes:
+
+- At 320px, 768px, and 1440px viewport widths, calendar/schedule, venue selection, match details, language content, and map interactions remain reachable and usable.
+- There is no horizontal page overflow at those widths, and no required interaction depends on hover alone.
+- Responsive layout and component composition remain UI-design decisions.
+
 ## Traceability
 
 | User story | Primary requirements |
@@ -95,3 +126,6 @@ Acceptance notes:
 | US-04 | FR-03–FR-06, FR-15 |
 | US-07 | FR-11, FR-26 |
 | US-08 | FR-16, FR-17, FR-20, FR-27, FR-28 |
+| US-09 | FR-29, FR-30, NFR-06 |
+| US-10 | FR-14, FR-31, NFR-07 |
+| US-11 | FR-25, FR-32, NFR-08 |

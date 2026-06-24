@@ -15,13 +15,15 @@ In scope:
 - A complete, map-independent schedule of all 104 matches.
 - Match selection from a list or a map venue representation.
 - Match, venue, fixed UTC-offset, UTC-time, browser-local-time, and day/night details.
+- Browser-preference localization for English, Japanese, Korean, Spanish, and Traditional Chinese.
+- Curated, localized stadium details, background, and history.
 - Responsive and keyboard-accessible interaction.
 
 Out of scope:
 
 - Fetching live scores, changing the schedule, user accounts, favourites, routing, or ticket purchasing.
 - Fetching real-time weather, stadium conditions, or live solar data from an external service.
-- Translating team and venue names beyond the strings supplied in `data.json`.
+- Automatic machine translation or translation of source-owned team, match, and venue strings beyond the strings supplied in `data.json`.
 
 ## Definitions
 
@@ -33,6 +35,8 @@ Out of scope:
 - **Day**: a known kick-off whose calculated solar altitude at the venue coordinates is at or above the apparent horizon (`>= 0`).
 - **Night**: a known kick-off whose calculated solar altitude at the venue coordinates is below the apparent horizon (`< 0`).
 - **TBC**: information not supplied by the source data. It must never be fabricated.
+- **Resolved locale**: one supported application locale selected from browser preferences, or English when no preference is supported.
+- **Venue profile**: curated, localized stadium content that is matched to one scheduled venue.
 
 ## Functional requirements (EARS)
 
@@ -82,6 +86,13 @@ Out of scope:
 - **FR-27 — State-driven:** While a match has a null `result`, a known UTC kick-off instant, and that instant is later than the reference clock, the system shall label it **Not started** and display its scheduled local start date/time, source UTC offset, UTC start time, and browser-local start time.
 - **FR-28 — Unwanted behaviour:** If a match has a null `result` and either a null kick-off time or a known kick-off instant no later than the reference clock, the system shall not label it **Finished** or **Not started**. It shall display `Kick-off time: TBC` for the former, and **Result pending** for the latter.
 
+### Localization, venue content, and responsive support
+
+- **FR-29 — Ubiquitous:** The system shall resolve a locale from browser language preferences using only `en`, `ja`, `ko`, `es`, and `zh-Hant`; it shall use `en` when no supported preference matches.
+- **FR-30 — Ubiquitous:** The system shall render static UI text, accessibility labels, status labels, and locale-formatted dates/times in the resolved locale. It shall preserve source match/team/venue strings from `data.json`.
+- **FR-31 — Event-driven:** When a user activates a venue representation, the system shall display the venue's localized details, background, history, and factual source links from its validated venue profile.
+- **FR-32 — Ubiquitous:** The system shall retain all required calendar/schedule, venue, match, map, and language interactions without horizontal page overflow at 320px, 768px, and 1440px viewport widths.
+
 ## Acceptance scenarios
 
 | ID | Given | When | Then |
@@ -100,6 +111,10 @@ Out of scope:
 | AT-12 | match 1 is selected | its result is present in the source data | the UI labels the match `Finished` and displays `2-0`. |
 | AT-13 | the reference clock is `2026-06-23T02:00:00Z` | match 44 is displayed | the UI labels it `Not started` and displays its `2026-06-22 20:00 GMT-7` start time and converted UTC/browser-local start times. |
 | AT-14 | the reference clock is after `2026-06-23T03:00:00Z` | match 44 has no source result | the UI labels it `Result pending`, not `Finished` or `Not started`. |
+| AT-15 | `navigator.languages` is `['ja-JP', 'en-US']` | the app loads | static UI and venue profile content render in Japanese. |
+| AT-16 | `navigator.languages` is `['zh-CN']` | the app loads | the resolved locale is English, not Simplified or Traditional Chinese. |
+| AT-17 | a user activates a venue | a valid localized profile exists | venue details, background, history, and factual source links render in the resolved locale. |
+| AT-18 | the app is used at 320px, 768px, and 1440px viewport widths | the user completes calendar, venue, match, language, and map interactions | every interaction remains reachable and the page has no horizontal overflow. |
 
 ## Non-functional requirements
 
@@ -108,3 +123,6 @@ Out of scope:
 - **NFR-03:** `yarn lint` and `yarn build` shall pass before merge.
 - **NFR-04:** Automated tests shall cover all acceptance scenarios that do not require a real map-tile network request.
 - **NFR-05:** The map implementation shall provide all required MapTiler and map-data attribution.
+- **NFR-06:** Only the five locales defined in `004-localization-and-venue-profiles.md` are supported; any unsupported locale shall have deterministic English fallback.
+- **NFR-07:** Every published venue profile shall be complete in all supported locales and include at least one factual source URL.
+- **NFR-08:** Responsive verification shall cover 320px, 768px, and 1440px viewport widths in a real browser before merge.

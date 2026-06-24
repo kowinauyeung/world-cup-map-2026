@@ -20,15 +20,22 @@ src/
   domain/
     tournament.ts          # Raw and normalised types
     normalizeTournament.ts # parsing, validation, UTC and solar Day/Night helpers
+    venueProfiles.ts       # profile validation and locale resolution helpers
     selectors.ts           # date counts, filters, venue grouping
   data/
     tournament.ts          # imports data.json and exports normalised matches
+    venueProfiles.ts       # imports and validates curated venue content once
+  i18n/
+    locale.ts              # resolves navigator.languages to a supported locale
+    messages.ts            # static UI message catalogues
   features/
     calendar/
       MatchCalendar.tsx
     matches/
       MatchList.tsx
       MatchDetails.tsx
+    venues/
+      VenueDetails.tsx
     map/
       VenueMap.tsx
       mapConfig.ts          # reads and validates VITE_MAP_STYLE_URL
@@ -39,10 +46,12 @@ src/
 Exact filenames may differ, but preserve these boundaries:
 
 - **Domain** is pure TypeScript and must not import React or MapLibre.
-- **Data** imports, validates, and normalises the static JSON once.
+- **Data** imports, validates, and normalises static schedule and venue-profile content once.
+- **I18n** resolves browser preferences to a supported locale and exposes translated static UI text; it does not translate source match data.
 - **Feature components** receive typed props and emit intent through callbacks; they do not access raw JSON.
 - **`App`** is the sole owner of selection state and derives all filtered values.
 - **`VenueMap`** receives already-grouped venue representations and is the only MapLibre-aware feature boundary. It owns the map instance, teardown, and selected-venue `flyTo` effect.
+- **Venue details** receives a validated, locale-resolved profile and never reads raw profile content directly.
 
 ## State and event flow
 
@@ -53,6 +62,8 @@ map venue activate ────┘              │
                                       ├─> derived matches by date
                                       ├─> derived venue groups
                                       └─> selected MatchDetails + map focus
+
+navigator.languages ──> bootstrap locale config ──> UI messages + venue profiles
 ```
 
 Required transitions:
@@ -70,6 +81,7 @@ Required transitions:
 - With no selected date, map all venue groups from all matches and make all 104 matches discoverable in a complete, map-independent schedule view. UI design may choose its visual arrangement, but it must not omit records.
 - With a selected date, render only that day's matches and venue groups, and show each out-of-map match entry's name, local time or `TBC`, source UTC offset, and venue.
 - One venue representation may represent multiple matches. Its context/list must show only matches in the current filtered collection.
+- Every selected venue must receive its validated, resolved-locale profile with details, background, history, and source links.
 - Render result only if `result !== null`.
 - Use an accessible HTML match list and details panel; do not make the map the sole interaction path.
 - Import MapLibre CSS once. Use a UI-design-defined venue representation rather than provider default pins, and verify the branded style, icons, glyphs, attribution, and an equivalent keyboard-accessible selection path in the production build.
@@ -96,14 +108,15 @@ formatUtcOffset(hours: number, original: string): string
 - The UI styling approach and layout are intentionally left to the design implementation.
 - Keep the map in a fixed, responsive-height container so MapLibre has a non-zero layout size.
 - Ensure narrow viewports have no horizontal page scrolling and retain access to every required interaction.
+- Verify the responsive experience at 320px, 768px, and 1440px viewport widths. The visual layout remains a UI-design decision.
 - Do not rely on colour alone for selected state or Day/Night distinction.
 - Preserve useful focus outlines and ensure text contrast meets WCAG AA for normal text.
 
 ## Delivery sequence
 
 1. Replace the starter UI and establish global layout/styles.
-2. Add domain types, JSON loader/validation, and pure unit tests.
+2. Add domain types, schedule/profile loaders, locale resolver, and pure unit tests.
 3. Add calendar and filtered match list with component tests.
-4. Add details panel and time/day-night formatting tests.
+4. Add match details, venue-profile details, locale rendering, and time/day-night/status tests.
 5. Add MapLibre map, branded style configuration, venue grouping, and selected-venue `flyTo` behaviour.
-6. Complete accessibility/responsive checks and run all quality gates.
+6. Complete accessibility, localization, and responsive checks and run all quality gates.
