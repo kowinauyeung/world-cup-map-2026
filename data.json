@@ -1,0 +1,1090 @@
+{
+  "tournament": "FIFA World Cup 2026",
+  "stages": [
+    {
+      "stage_name": "Group Stage",
+      "rounds": [
+        {
+          "round_name": "Matchday 1 to 3",
+          "matches": [
+            {
+              "match_id": 1,
+              "date": "2026-06-11",
+              "time": "17:00",
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group A) Mexico vs South Africa",
+              "result": "2-0",
+              "venue": "Mexico City Stadium (Estadio Azteca)",
+              "coordinates": "19.3029, -99.1504"
+            },
+            {
+              "match_id": 2,
+              "date": "2026-06-11",
+              "time": "19:30",
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group A) Korea Republic vs Czechia",
+              "result": "2-1",
+              "venue": "Guadalajara Stadium (Estadio Akron)",
+              "coordinates": "20.6811, -103.4628"
+            },
+            {
+              "match_id": 3,
+              "date": "2026-06-12",
+              "time": "16:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group B) Canada vs Bosnia and Herzegovina",
+              "result": "1-1",
+              "venue": "Toronto Stadium (BMO Field)",
+              "coordinates": "43.6332, -79.4186"
+            },
+            {
+              "match_id": 4,
+              "date": "2026-06-12",
+              "time": "19:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group D) USA vs Paraguay",
+              "result": "4-1",
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 5,
+              "date": "2026-06-13",
+              "time": "13:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group C) Haiti vs Scotland",
+              "result": "0-1",
+              "venue": "Boston Stadium (Gillette Stadium)",
+              "coordinates": "42.0903, -71.2643"
+            },
+            {
+              "match_id": 6,
+              "date": "2026-06-13",
+              "time": "15:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group D) Australia vs Türkiye",
+              "result": "2-0",
+              "venue": "BC Place Vancouver",
+              "coordinates": "49.2767, -123.1119"
+            },
+            {
+              "match_id": 7,
+              "date": "2026-06-13",
+              "time": "18:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group C) Brazil vs Morocco",
+              "result": "1-1",
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            },
+            {
+              "match_id": 8,
+              "date": "2026-06-13",
+              "time": "18:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group B) Qatar vs Switzerland",
+              "result": "1-1",
+              "venue": "San Francisco Bay Area Stadium (Levi's)",
+              "coordinates": "37.4031, -121.9697"
+            },
+            {
+              "match_id": 9,
+              "date": "2026-06-14",
+              "time": "15:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group E) Côte d'Ivoire vs Ecuador",
+              "result": "1-0",
+              "venue": "Philadelphia Stadium (Lincoln Financial)",
+              "coordinates": "39.9008, -75.1675"
+            },
+            {
+              "match_id": 10,
+              "date": "2026-06-14",
+              "time": "17:30",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group E) Germany vs Curaçao",
+              "result": "7-1",
+              "venue": "Houston Stadium (NRG Stadium)",
+              "coordinates": "29.6847, -95.4081"
+            },
+            {
+              "match_id": 11,
+              "date": "2026-06-14",
+              "time": "19:00",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group F) Netherlands vs Japan",
+              "result": "2-2",
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 12,
+              "date": "2026-06-14",
+              "time": "20:00",
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group F) Sweden vs Tunisia",
+              "result": "5-1",
+              "venue": "Estadio Monterrey (Estadio BBVA)",
+              "coordinates": "25.6692, -100.2447"
+            },
+            {
+              "match_id": 13,
+              "date": "2026-06-15",
+              "time": "16:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group H) Saudi Arabia vs Uruguay",
+              "result": "1-1",
+              "venue": "Miami Stadium (Hard Rock Stadium)",
+              "coordinates": "25.9581, -80.2389"
+            },
+            {
+              "match_id": 14,
+              "date": "2026-06-15",
+              "time": "19:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group H) Spain vs Cabo Verde",
+              "result": "0-0",
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            },
+            {
+              "match_id": 15,
+              "date": "2026-06-15",
+              "time": "19:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group G) IR Iran vs New Zealand",
+              "result": "2-2",
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 16,
+              "date": "2026-06-15",
+              "time": "20:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group G) Belgium vs Egypt",
+              "result": "1-1",
+              "venue": "Seattle Stadium (Lumen Field)",
+              "coordinates": "47.5952, -122.3316"
+            },
+            {
+              "match_id": 17,
+              "date": "2026-06-16",
+              "time": "14:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group I) France vs Senegal",
+              "result": "3-1",
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            },
+            {
+              "match_id": 18,
+              "date": "2026-06-16",
+              "time": "17:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group I) Iraq vs Norway",
+              "result": "1-4",
+              "venue": "Boston Stadium (Gillette Stadium)",
+              "coordinates": "42.0903, -71.2643"
+            },
+            {
+              "match_id": 19,
+              "date": "2026-06-16",
+              "time": "19:30",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group J) Argentina vs Algeria",
+              "result": "3-0",
+              "venue": "Kansas City Stadium (Arrowhead Stadium)",
+              "coordinates": "39.0489, -94.4839"
+            },
+            {
+              "match_id": 20,
+              "date": "2026-06-16",
+              "time": "20:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group J) Austria vs Jordan",
+              "result": "3-1",
+              "venue": "San Francisco Bay Area Stadium (Levi's)",
+              "coordinates": "37.4031, -121.9697"
+            },
+            {
+              "match_id": 21,
+              "date": "2026-06-17",
+              "time": "15:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group L) Ghana vs Panama",
+              "result": "1-0",
+              "venue": "Toronto Stadium (BMO Field)",
+              "coordinates": "43.6332, -79.4186"
+            },
+            {
+              "match_id": 22,
+              "date": "2026-06-17",
+              "time": "17:30",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group L) England vs Croatia",
+              "result": "4-2",
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 23,
+              "date": "2026-06-17",
+              "time": "19:00",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group K) Portugal vs Congo DR",
+              "result": "1-1",
+              "venue": "Houston Stadium (NRG Stadium)",
+              "coordinates": "29.6847, -95.4081"
+            },
+            {
+              "match_id": 24,
+              "date": "2026-06-17",
+              "time": "20:30",
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group K) Uzbekistan vs Colombia",
+              "result": "1-3",
+              "venue": "Mexico City Stadium (Estadio Azteca)",
+              "coordinates": "19.3029, -99.1504"
+            },
+            {
+              "match_id": 25,
+              "date": "2026-06-18",
+              "time": "15:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group A) Czechia vs South Africa",
+              "result": "1-1",
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            },
+            {
+              "match_id": 26,
+              "date": "2026-06-18",
+              "time": "15:30",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group B) Switzerland vs Bosnia and Herzegovina",
+              "result": "4-1",
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 27,
+              "date": "2026-06-18",
+              "time": "18:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group B) Canada vs Qatar",
+              "result": "6-0",
+              "venue": "BC Place Vancouver",
+              "coordinates": "49.2767, -123.1119"
+            },
+            {
+              "match_id": 28,
+              "date": "2026-06-18",
+              "time": "20:30",
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group A) Mexico vs Korea Republic",
+              "result": "1-0",
+              "venue": "Guadalajara Stadium (Estadio Akron)",
+              "coordinates": "20.6811, -103.4628"
+            },
+            {
+              "match_id": 29,
+              "date": "2026-06-19",
+              "time": "15:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group C) Brazil vs Haiti",
+              "result": "3-0",
+              "venue": "Philadelphia Stadium (Lincoln Financial)",
+              "coordinates": "39.9008, -75.1675"
+            },
+            {
+              "match_id": 30,
+              "date": "2026-06-19",
+              "time": "17:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group C) Scotland vs Morocco",
+              "result": "0-1",
+              "venue": "Boston Stadium (Gillette Stadium)",
+              "coordinates": "42.0903, -71.2643"
+            },
+            {
+              "match_id": 31,
+              "date": "2026-06-19",
+              "time": "18:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group D) Türkiye vs Paraguay",
+              "result": "0-1",
+              "venue": "San Francisco Bay Area Stadium (Levi's)",
+              "coordinates": "37.4031, -121.9697"
+            },
+            {
+              "match_id": 32,
+              "date": "2026-06-19",
+              "time": "20:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group D) USA vs Australia",
+              "result": "2-0",
+              "venue": "Seattle Stadium (Lumen Field)",
+              "coordinates": "47.5952, -122.3316"
+            },
+            {
+              "match_id": 33,
+              "date": "2026-06-20",
+              "time": "14:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group E) Germany vs Côte d'Ivoire",
+              "result": "2-1",
+              "venue": "Toronto Stadium (BMO Field)",
+              "coordinates": "43.6332, -79.4186"
+            },
+            {
+              "match_id": 34,
+              "date": "2026-06-20",
+              "time": "16:30",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group E) Ecuador vs Curaçao",
+              "result": "0-0",
+              "venue": "Kansas City Stadium (Arrowhead Stadium)",
+              "coordinates": "39.0489, -94.4839"
+            },
+            {
+              "match_id": 35,
+              "date": "2026-06-20",
+              "time": "18:00",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group F) Netherlands vs Sweden",
+              "result": "5-1",
+              "venue": "Houston Stadium (NRG Stadium)",
+              "coordinates": "29.6847, -95.4081"
+            },
+            {
+              "match_id": 36,
+              "date": "2026-06-20",
+              "time": "20:00",
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group F) Tunisia vs Japan",
+              "result": "0-4",
+              "venue": "Estadio Monterrey (Estadio BBVA)",
+              "coordinates": "25.6692, -100.2447"
+            },
+            {
+              "match_id": 37,
+              "date": "2026-06-21",
+              "time": "15:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group H) Uruguay vs Cabo Verde",
+              "result": "2-2",
+              "venue": "Miami Stadium (Hard Rock Stadium)",
+              "coordinates": "25.9581, -80.2389"
+            },
+            {
+              "match_id": 38,
+              "date": "2026-06-21",
+              "time": "18:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group H) Spain vs Saudi Arabia",
+              "result": "4-0",
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            },
+            {
+              "match_id": 39,
+              "date": "2026-06-21",
+              "time": "18:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group G) Belgium vs IR Iran",
+              "result": "0-0",
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 40,
+              "date": "2026-06-21",
+              "time": "20:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group G) New Zealand vs Egypt",
+              "result": "1-3",
+              "venue": "BC Place Vancouver",
+              "coordinates": "49.2767, -123.1119"
+            },
+            {
+              "match_id": 41,
+              "date": "2026-06-22",
+              "time": "15:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group I) Norway vs Senegal",
+              "result": "3-2",
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            },
+            {
+              "match_id": 42,
+              "date": "2026-06-22",
+              "time": "18:00",
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group I) France vs Iraq",
+              "result": "3-0",
+              "venue": "Philadelphia Stadium (Lincoln Financial)",
+              "coordinates": "39.9008, -75.1675"
+            },
+            {
+              "match_id": 43,
+              "date": "2026-06-22",
+              "time": "19:00",
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group J) Argentina vs Austria",
+              "result": "2-0",
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 44,
+              "date": "2026-06-22",
+              "time": "20:00",
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group J) Jordan vs Algeria",
+              "result": null,
+              "venue": "San Francisco Bay Area Stadium (Levi's)",
+              "coordinates": "37.4031, -121.9697"
+            },
+            {
+              "match_id": 45,
+              "date": "2026-06-23",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group L) England vs Ghana",
+              "result": null,
+              "venue": "Boston Stadium (Gillette Stadium)",
+              "coordinates": "42.0903, -71.2643"
+            },
+            {
+              "match_id": 46,
+              "date": "2026-06-23",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group L) Panama vs Croatia",
+              "result": null,
+              "venue": "Toronto Stadium (BMO Field)",
+              "coordinates": "43.6332, -79.4186"
+            },
+            {
+              "match_id": 47,
+              "date": "2026-06-23",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group K) Portugal vs Uzbekistan",
+              "result": null,
+              "venue": "Houston Stadium (NRG Stadium)",
+              "coordinates": "29.6847, -95.4081"
+            },
+            {
+              "match_id": 48,
+              "date": "2026-06-23",
+              "time": null,
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group K) Colombia vs Congo DR",
+              "result": null,
+              "venue": "Guadalajara Stadium (Estadio Akron)",
+              "coordinates": "20.6811, -103.4628"
+            },
+            {
+              "match_id": 49,
+              "date": "2026-06-24",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group C) Scotland vs Brazil",
+              "result": null,
+              "venue": "Miami Stadium (Hard Rock Stadium)",
+              "coordinates": "25.9581, -80.2389"
+            },
+            {
+              "match_id": 50,
+              "date": "2026-06-24",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group C) Morocco vs Haiti",
+              "result": null,
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            },
+            {
+              "match_id": 51,
+              "date": "2026-06-24",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group B) Switzerland vs Canada",
+              "result": null,
+              "venue": "BC Place Vancouver",
+              "coordinates": "49.2767, -123.1119"
+            },
+            {
+              "match_id": 52,
+              "date": "2026-06-24",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group B) Bosnia and Herzegovina vs Qatar",
+              "result": null,
+              "venue": "Seattle Stadium (Lumen Field)",
+              "coordinates": "47.5952, -122.3316"
+            },
+            {
+              "match_id": 53,
+              "date": "2026-06-24",
+              "time": null,
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group A) Czechia vs Mexico",
+              "result": null,
+              "venue": "Mexico City Stadium (Estadio Azteca)",
+              "coordinates": "19.3029, -99.1504"
+            },
+            {
+              "match_id": 54,
+              "date": "2026-06-24",
+              "time": null,
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group A) South Africa vs Korea Republic",
+              "result": null,
+              "venue": "Estadio Monterrey (Estadio BBVA)",
+              "coordinates": "25.6692, -100.2447"
+            },
+            {
+              "match_id": 55,
+              "date": "2026-06-25",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group E) Curaçao vs Côte d'Ivoire",
+              "result": null,
+              "venue": "Philadelphia Stadium (Lincoln Financial)",
+              "coordinates": "39.9008, -75.1675"
+            },
+            {
+              "match_id": 56,
+              "date": "2026-06-25",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group E) Ecuador vs Germany",
+              "result": null,
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            },
+            {
+              "match_id": 57,
+              "date": "2026-06-25",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group F) Japan vs Sweden",
+              "result": null,
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 58,
+              "date": "2026-06-25",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group F) Tunisia vs Netherlands",
+              "result": null,
+              "venue": "Kansas City Stadium (Arrowhead Stadium)",
+              "coordinates": "39.0489, -94.4839"
+            },
+            {
+              "match_id": 59,
+              "date": "2026-06-25",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group D) Türkiye vs USA",
+              "result": null,
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 60,
+              "date": "2026-06-25",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group D) Paraguay vs Australia",
+              "result": null,
+              "venue": "San Francisco Bay Area Stadium (Levi's)",
+              "coordinates": "37.4031, -121.9697"
+            },
+            {
+              "match_id": 61,
+              "date": "2026-06-26",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group I) Norway vs France",
+              "result": null,
+              "venue": "Boston Stadium (Gillette Stadium)",
+              "coordinates": "42.0903, -71.2643"
+            },
+            {
+              "match_id": 62,
+              "date": "2026-06-26",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group I) Senegal vs Iraq",
+              "result": null,
+              "venue": "Toronto Stadium (BMO Field)",
+              "coordinates": "43.6332, -79.4186"
+            },
+            {
+              "match_id": 63,
+              "date": "2026-06-26",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group G) Egypt vs IR Iran",
+              "result": null,
+              "venue": "Seattle Stadium (Lumen Field)",
+              "coordinates": "47.5952, -122.3316"
+            },
+            {
+              "match_id": 64,
+              "date": "2026-06-26",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "(Group G) New Zealand vs Belgium",
+              "result": null,
+              "venue": "BC Place Vancouver",
+              "coordinates": "49.2767, -123.1119"
+            },
+            {
+              "match_id": 65,
+              "date": "2026-06-26",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group H) Cabo Verde vs Saudi Arabia",
+              "result": null,
+              "venue": "Houston Stadium (NRG Stadium)",
+              "coordinates": "29.6847, -95.4081"
+            },
+            {
+              "match_id": 66,
+              "date": "2026-06-26",
+              "time": null,
+              "gmt_offset": "GMT-6",
+              "match_name": "(Group H) Uruguay vs Spain",
+              "result": null,
+              "venue": "Guadalajara Stadium (Estadio Akron)",
+              "coordinates": "20.6811, -103.4628"
+            },
+            {
+              "match_id": 67,
+              "date": "2026-06-27",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group L) Panama vs England",
+              "result": null,
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            },
+            {
+              "match_id": 68,
+              "date": "2026-06-27",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group L) Croatia vs Ghana",
+              "result": null,
+              "venue": "Philadelphia Stadium (Lincoln Financial)",
+              "coordinates": "39.9008, -75.1675"
+            },
+            {
+              "match_id": 69,
+              "date": "2026-06-27",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group J) Algeria vs Austria",
+              "result": null,
+              "venue": "Kansas City Stadium (Arrowhead Stadium)",
+              "coordinates": "39.0489, -94.4839"
+            },
+            {
+              "match_id": 70,
+              "date": "2026-06-27",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "(Group J) Jordan vs Argentina",
+              "result": null,
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 71,
+              "date": "2026-06-27",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group K) Colombia vs Portugal",
+              "result": null,
+              "venue": "Miami Stadium (Hard Rock Stadium)",
+              "coordinates": "25.9581, -80.2389"
+            },
+            {
+              "match_id": 72,
+              "date": "2026-06-27",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "(Group K) Congo DR vs Uzbekistan",
+              "result": null,
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage_name": "Knockout Rounds",
+      "rounds": [
+        {
+          "round_name": "Round of 32",
+          "matches": [
+            {
+              "match_id": 73,
+              "date": "2026-06-28",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "Group A Runner-Up vs Group B Runner-Up",
+              "result": null,
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 74,
+              "date": "2026-06-29",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Germany vs 3rd Place A/B/C/D/F",
+              "result": null,
+              "venue": "Boston Stadium (Gillette Stadium)",
+              "coordinates": "42.0903, -71.2643"
+            },
+            {
+              "match_id": 75,
+              "date": "2026-06-29",
+              "time": null,
+              "gmt_offset": "GMT-6",
+              "match_name": "Group F Winner vs Group C Runner-Up",
+              "result": null,
+              "venue": "Estadio Monterrey (Estadio BBVA)",
+              "coordinates": "25.6692, -100.2447"
+            },
+            {
+              "match_id": 76,
+              "date": "2026-06-29",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Group C Winner vs Group F Runner-Up",
+              "result": null,
+              "venue": "Houston Stadium (NRG Stadium)",
+              "coordinates": "29.6847, -95.4081"
+            },
+            {
+              "match_id": 77,
+              "date": "2026-06-30",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Group I Winner vs 3rd Place C/D/F/G/H",
+              "result": null,
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            },
+            {
+              "match_id": 78,
+              "date": "2026-06-30",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Group E Runner-Up vs Group I Runner-Up",
+              "result": null,
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 79,
+              "date": "2026-06-30",
+              "time": null,
+              "gmt_offset": "GMT-6",
+              "match_name": "Mexico vs 3rd Place C/E/F/H/I",
+              "result": null,
+              "venue": "Mexico City Stadium (Estadio Azteca)",
+              "coordinates": "19.3029, -99.1504"
+            },
+            {
+              "match_id": 80,
+              "date": "2026-07-01",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Group L Winner vs 3rd Place E/H/I/J/K",
+              "result": null,
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            },
+            {
+              "match_id": 81,
+              "date": "2026-07-01",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "USA vs 3rd Place B/E/F/I/J",
+              "result": null,
+              "venue": "San Francisco Bay Area Stadium (Levi's)",
+              "coordinates": "37.4031, -121.9697"
+            },
+            {
+              "match_id": 82,
+              "date": "2026-07-01",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "Group G Winner vs 3rd Place A/E/H/I/J",
+              "result": null,
+              "venue": "Seattle Stadium (Lumen Field)",
+              "coordinates": "47.5952, -122.3316"
+            },
+            {
+              "match_id": 83,
+              "date": "2026-07-02",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Group K Runner-Up vs Group L Runner-Up",
+              "result": null,
+              "venue": "Toronto Stadium (BMO Field)",
+              "coordinates": "43.6332, -79.4186"
+            },
+            {
+              "match_id": 84,
+              "date": "2026-07-02",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "Group H Winner vs Group J Runner-Up",
+              "result": null,
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 85,
+              "date": "2026-07-02",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "Group B Winner vs 3rd Place E/F/G/I/J",
+              "result": null,
+              "venue": "BC Place Vancouver",
+              "coordinates": "49.2767, -123.1119"
+            },
+            {
+              "match_id": 86,
+              "date": "2026-07-03",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Group J Winner vs Group H Runner-Up",
+              "result": null,
+              "venue": "Miami Stadium (Hard Rock Stadium)",
+              "coordinates": "25.9581, -80.2389"
+            },
+            {
+              "match_id": 87,
+              "date": "2026-07-03",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Group K Winner vs 3rd Place D/E/I/J/L",
+              "result": null,
+              "venue": "Kansas City Stadium (Arrowhead Stadium)",
+              "coordinates": "39.0489, -94.4839"
+            },
+            {
+              "match_id": 88,
+              "date": "2026-07-03",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Group D Runner-Up vs Group G Runner-Up",
+              "result": null,
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            }
+          ]
+        },
+        {
+          "round_name": "Round of 16",
+          "matches": [
+            {
+              "match_id": 89,
+              "date": "2026-07-04",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Winner Match 74 vs Winner Match 77",
+              "result": null,
+              "venue": "Philadelphia Stadium (Lincoln Financial)",
+              "coordinates": "39.9008, -75.1675"
+            },
+            {
+              "match_id": 90,
+              "date": "2026-07-04",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Winner Match 73 vs Winner Match 75",
+              "result": null,
+              "venue": "Houston Stadium (NRG Stadium)",
+              "coordinates": "29.6847, -95.4081"
+            },
+            {
+              "match_id": 91,
+              "date": "2026-07-05",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Winner Match 76 vs Winner Match 78",
+              "result": null,
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            },
+            {
+              "match_id": 92,
+              "date": "2026-07-05",
+              "time": null,
+              "gmt_offset": "GMT-6",
+              "match_name": "Winner Match 79 vs Winner Match 80",
+              "result": null,
+              "venue": "Mexico City Stadium (Estadio Azteca)",
+              "coordinates": "19.3029, -99.1504"
+            },
+            {
+              "match_id": 93,
+              "date": "2026-07-06",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Winner Match 83 vs Winner Match 84",
+              "result": null,
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 94,
+              "date": "2026-07-06",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "Winner Match 81 vs Winner Match 82",
+              "result": null,
+              "venue": "Seattle Stadium (Lumen Field)",
+              "coordinates": "47.5952, -122.3316"
+            },
+            {
+              "match_id": 95,
+              "date": "2026-07-07",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Winner Match 86 vs Winner Match 88",
+              "result": null,
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            },
+            {
+              "match_id": 96,
+              "date": "2026-07-07",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "Winner Match 85 vs Winner Match 87",
+              "result": null,
+              "venue": "BC Place Vancouver",
+              "coordinates": "49.2767, -123.1119"
+            }
+          ]
+        },
+        {
+          "round_name": "Quarter-Finals",
+          "matches": [
+            {
+              "match_id": 97,
+              "date": "2026-07-09",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Winner Match 89 vs Winner Match 90",
+              "result": null,
+              "venue": "Boston Stadium (Gillette Stadium)",
+              "coordinates": "42.0903, -71.2643"
+            },
+            {
+              "match_id": 98,
+              "date": "2026-07-10",
+              "time": null,
+              "gmt_offset": "GMT-7",
+              "match_name": "Winner Match 93 vs Winner Match 94",
+              "result": null,
+              "venue": "Los Angeles Stadium (SoFi Stadium)",
+              "coordinates": "33.9535, -118.3392"
+            },
+            {
+              "match_id": 99,
+              "date": "2026-07-11",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Winner Match 91 vs Winner Match 92",
+              "result": null,
+              "venue": "Miami Stadium (Hard Rock Stadium)",
+              "coordinates": "25.9581, -80.2389"
+            },
+            {
+              "match_id": 100,
+              "date": "2026-07-11",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Winner Match 95 vs Winner Match 96",
+              "result": null,
+              "venue": "Kansas City Stadium (Arrowhead Stadium)",
+              "coordinates": "39.0489, -94.4839"
+            }
+          ]
+        },
+        {
+          "round_name": "Semi-Finals",
+          "matches": [
+            {
+              "match_id": 101,
+              "date": "2026-07-14",
+              "time": null,
+              "gmt_offset": "GMT-5",
+              "match_name": "Winner Match 97 vs Winner Match 98",
+              "result": null,
+              "venue": "Dallas Stadium (AT&T Stadium)",
+              "coordinates": "32.7478, -96.0936"
+            },
+            {
+              "match_id": 102,
+              "date": "2026-07-15",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Winner Match 99 vs Winner Match 100",
+              "result": null,
+              "venue": "Atlanta Stadium (Mercedes-Benz Stadium)",
+              "coordinates": "33.7556, -84.4000"
+            }
+          ]
+        },
+        {
+          "round_name": "Bronze Final",
+          "matches": [
+            {
+              "match_id": 103,
+              "date": "2026-07-18",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "Runner-Up Match 101 vs Runner-Up Match 102",
+              "result": null,
+              "venue": "Miami Stadium (Hard Rock Stadium)",
+              "coordinates": "25.9581, -80.2389"
+            }
+          ]
+        },
+        {
+          "round_name": "Final",
+          "matches": [
+            {
+              "match_id": 104,
+              "date": "2026-07-19",
+              "time": null,
+              "gmt_offset": "GMT-4",
+              "match_name": "FIFA World Cup 2026 Final (Winner Match 101 vs Winner Match 102)",
+              "result": null,
+              "venue": "New York New Jersey Stadium (MetLife)",
+              "coordinates": "40.8128, -74.0744"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
