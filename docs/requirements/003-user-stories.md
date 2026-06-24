@@ -64,6 +64,27 @@ Acceptance notes:
 - It does not omit matches with unknown kick-off times or results; those fields display `TBC` or remain absent according to the data contract.
 - The schedule remains usable without interacting with the map.
 
+## US-07 — See a finished match's result
+
+**As a visitor, I want to see the result of a finished match, so that I can tell how that match ended.**
+
+Acceptance notes:
+
+- A match is treated as finished when its source `result` is present; the app does not infer a result from its scheduled date or time.
+- The result is shown with a clear `Finished` status in both the selected-match details and any schedule entry that presents status.
+- A missing `result` is never replaced with a fabricated score.
+
+## US-08 — See when an upcoming match starts
+
+**As a visitor, I want to see when a match that has not started will begin, so that I can plan to watch it.**
+
+Acceptance notes:
+
+- A match is `Not started` only when it has no result and its known UTC kick-off instant is later than the current reference time.
+- It displays its local schedule date/time, source UTC offset, and converted UTC/browser-local start time according to the time contract.
+- If the source time is `null`, it displays `Kick-off time: TBC` instead of a start time or `Not started` status.
+- If a known kick-off is past and no result exists, it displays `Result pending`; it does not infer `Finished` or `Not started`.
+
 ## Traceability
 
 | User story | Primary requirements |
@@ -72,3 +93,5 @@ Acceptance notes:
 | US-02 | FR-07–FR-12, FR-14 |
 | US-03, US-06 | FR-01, FR-05, FR-06, FR-13 |
 | US-04 | FR-03–FR-06, FR-15 |
+| US-07 | FR-11, FR-26 |
+| US-08 | FR-16, FR-17, FR-20, FR-27, FR-28 |

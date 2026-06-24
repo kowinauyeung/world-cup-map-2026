@@ -81,12 +81,15 @@ Expose pure helpers with behaviour equivalent to:
 ```ts
 getUtcInstant(match: Match): Date | null
 getDayNight(match: Match): 'day' | 'night' | 'tbc'
+getMatchDisplayStatus(match: Match, referenceTime: Date): MatchDisplayStatus
 formatUtcOffset(hours: number, original: string): string
 ```
 
 `getUtcInstant` must return `null` for `localTime: null`. Do not construct a local-time `Date` from a bare `YYYY-MM-DDTHH:mm` string; browser parsing would apply the visitor's zone and corrupt the schedule conversion.
 
 `getDayNight` shall return `tbc` when `getUtcInstant` returns `null`. Otherwise it shall call `SunCalc.getPosition(utcInstant, latitude, longitude)` and return `day` when `altitude >= 0`, or `night` when it is below zero. The calculation is based on the apparent horizon; do not substitute a local clock-time range or make a network request.
+
+`getMatchDisplayStatus` shall implement the precedence rules in the data contract. Pass the current clock into the helper; do not let domain logic access `new Date()` implicitly. UI code may provide `new Date()` at render time, while tests pass a fixed reference time.
 
 ## Styling and responsive layout
 

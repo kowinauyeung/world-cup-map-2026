@@ -76,6 +76,12 @@ Out of scope:
 - **FR-24 — Event-driven:** When a selection changes the details panel, the system shall announce the selected match name through a polite live region or move focus to a clearly labelled details heading without unexpected focus trapping.
 - **FR-25 — State-driven:** While the viewport is narrower than 768 CSS pixels, the system shall provide access to calendar, match selection, match details, and map without horizontal page scrolling. Their visual arrangement is a UI-design decision.
 
+### Match results and start status
+
+- **FR-26 — Event-driven:** When a selected match has a non-null source `result`, the system shall label the match **Finished** and display that result. The result shall take precedence over time-based status calculation.
+- **FR-27 — State-driven:** While a match has a null `result`, a known UTC kick-off instant, and that instant is later than the reference clock, the system shall label it **Not started** and display its scheduled local start date/time, source UTC offset, UTC start time, and browser-local start time.
+- **FR-28 — Unwanted behaviour:** If a match has a null `result` and either a null kick-off time or a known kick-off instant no later than the reference clock, the system shall not label it **Finished** or **Not started**. It shall display `Kick-off time: TBC` for the former, and **Result pending** for the latter.
+
 ## Acceptance scenarios
 
 | ID | Given | When | Then |
@@ -91,6 +97,9 @@ Out of scope:
 | AT-09 | no date is selected | the app loads | all 16 venues and all 104 schedule entries are discoverable, with no map interaction required to browse the schedule. |
 | AT-10 | no date is selected | the user activates a venue | the UI shows that venue's name, coordinates, and every match scheduled there, without automatically choosing one. |
 | AT-11 | a date with matches is selected | the filtered list is shown outside the map | every entry includes its match name, local time or `TBC`, source UTC offset, and venue. |
+| AT-12 | match 1 is selected | its result is present in the source data | the UI labels the match `Finished` and displays `2-0`. |
+| AT-13 | the reference clock is `2026-06-23T02:00:00Z` | match 44 is displayed | the UI labels it `Not started` and displays its `2026-06-22 20:00 GMT-7` start time and converted UTC/browser-local start times. |
+| AT-14 | the reference clock is after `2026-06-23T03:00:00Z` | match 44 has no source result | the UI labels it `Result pending`, not `Finished` or `Not started`. |
 
 ## Non-functional requirements
 

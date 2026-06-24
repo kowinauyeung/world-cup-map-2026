@@ -17,6 +17,8 @@
 - Activate an unfiltered venue representation and assert the venue name, coordinates, and every match at that venue are offered without an arbitrary match selection, regardless of the venue context's visual placement.
 - Assert each date-filtered out-of-map match entry displays match name, local time or `TBC`, source UTC offset, and venue.
 - Select match 1 and assert its known time, `UTC-06:00 (GMT-6)`, `2026-06-11 23:00 UTC`, and `Day` are rendered.
+- With a fixed reference clock of `2026-06-23T02:00:00Z`, assert match 44 is `Not started` and displays every required local/UTC/browser-local start-time value.
+- Assert a match with source result `2-0` is labelled `Finished`; assert a known past kick-off with null result is labelled `Result pending`, not `Finished` or `Not started`.
 - Select match 45 and assert TBC time/day-night behaviour; assert calculated UTC and browser-local time are absent.
 - Assert solar classification with deterministic fixtures: Mexico City (`19.3029`, `-99.1504`) at `2026-06-11T18:00:00Z` is `Day`, and at `2026-06-12T06:00:00Z` is `Night`.
 - Assert a `result: null` match has no score output.

@@ -7,7 +7,7 @@ When a coding task is complete, before considering it done / before merge:
    - `yarn lint` (`eslint .`)
    - `yarn build` (`tsc -b && vite build`)
 2. **No forbidden patterns remain**: no TypeScript `any`, no unchecked raw JSON access, no console errors, and no runtime network calls other than configured map-provider resources (NFR-02).
-3. **Acceptance coverage**: every acceptance scenario in `docs/requirements/001-product-requirements.md` (AT-01..AT-11) is covered by an automated test or documented manual verification (`docs/implementation/testing-strategy.md`).
+3. **Acceptance coverage**: every acceptance scenario in `docs/requirements/001-product-requirements.md` (AT-01..AT-14) is covered by an automated test or documented manual verification (`docs/implementation/testing-strategy.md`).
 4. **Docs in sync**: if a requirement or ADR was deliberately changed during implementation, update the relevant doc in the same change and explain why in the PR (per `docs/README.md`).
 
 ## Required automated test cases (testing-strategy.md)
@@ -16,6 +16,7 @@ When a coding task is complete, before considering it done / before merge:
 - Select `2026-06-11` → only match ids 1 & 2 passed to list/map selectors.
 - Unfiltered schedule view makes all 104 matches discoverable without map interaction; venue activation exposes venue name, coordinates, and all active-filter matches without arbitrary selection, with UI placement left to design.
 - Each date-filtered out-of-map entry shows match name, local time or TBC, source UTC offset, and venue.
+- A non-null source result renders `Finished` and the source score. A known future kick-off with null result renders `Not started`; a known past kick-off with null result renders `Result pending`; null time renders `Kick-off time: TBC`.
 - Match 45: `localTime: null`, `result: null`; TBC behaviour; no calculated UTC / browser-local time shown.
 - `result: null` match → no score output.
 - Date with zero matches → required empty state + zero map venue-representation inputs.

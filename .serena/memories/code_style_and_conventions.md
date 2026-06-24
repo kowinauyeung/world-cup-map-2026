@@ -33,6 +33,7 @@ Required transitions: calendar select → set date, clear matchId; calendar clea
 - If `time` is null: do NOT create a Date, show `Kick-off time: TBC`, `Day/Night: TBC`, no UTC/browser-local timestamp. Never fabricate TBC values.
 - Use `suncalc@^2.0.0` with the UTC instant and venue coordinates: solar altitude `>= 0` is Day; below zero is Night. Use `Intl.DateTimeFormat` only after a UTC instant exists.
 - Pure helpers contract: `getUtcInstant(match): Date | null`, `getDayNight(match): 'day'|'night'|'tbc'`, `formatUtcOffset(hours, original): string`.
+- Match display status is derived in this order: non-null result → `finished`; null result + null time → `time_tbc`; null result + future UTC instant → `not_started`; otherwise → `result_pending`. Pass a reference clock into the helper; domain logic must not read `new Date()` directly.
 
 ## Styling / a11y
 - Calendar control, general UI styling system, layout, and venue-marker visual form are UI-design decisions. Narrow viewports must have no horizontal scroll and retain every required interaction.

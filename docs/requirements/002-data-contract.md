@@ -103,6 +103,25 @@ For example, `2026-06-11 17:00 GMT-6` is `2026-06-11 23:00 UTC`. A negative offs
 
 If `time` is `null`, do not create a JavaScript `Date` for the match and do not convert it.
 
+## Match display-status contract
+
+`data.json` provides no explicit match-status or end-time field. Derive display status with a supplied reference clock, in this exact precedence order:
+
+```ts
+type MatchDisplayStatus =
+  | 'finished'
+  | 'not_started'
+  | 'result_pending'
+  | 'time_tbc'
+```
+
+1. Return `finished` when `result !== null`, regardless of the scheduled timestamp.
+2. Return `time_tbc` when `result === null` and `localTime === null`.
+3. Return `not_started` when `result === null`, the UTC kick-off instant exists, and it is later than the reference clock.
+4. Return `result_pending` when `result === null` and the known UTC kick-off instant is at or before the reference clock.
+
+Do not infer a live, postponed, cancelled, or finished state from date/time alone. The reference clock must be injected into status helpers in tests rather than read implicitly from the system clock.
+
 ## Required data tests
 
 - The loader returns 104 matches for the current file.
@@ -110,4 +129,6 @@ If `time` is `null`, do not create a JavaScript `Date` for the match and do not 
 - Match 1 normalises to `2026-06-11`, `17:00`, `utcOffsetHours: -6`, and coordinates `19.3029`, `-99.1504`.
 - Match 45 retains `localTime: null` and `result: null`.
 - The computed UTC instant for match 1 formats to `2026-06-11 23:00 UTC`.
+- Match 1 has `finished` status for any reference clock because its source result is non-null. With a reference clock of `2026-06-23T02:00:00Z`, match 44 has `not_started` status; with a clock later than `2026-06-23T03:00:00Z`, match 44 has `result_pending` status.
+- A match with null result and a known past kick-off returns `result_pending`; a match with null time returns `time_tbc`.
 - An invalid coordinate, offset, or duplicate ID makes the loader fail with an actionable error.
